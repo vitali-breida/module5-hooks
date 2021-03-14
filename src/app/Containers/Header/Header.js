@@ -18,7 +18,10 @@ export default function Header(props) {
             <SearchIcon onCancelInfoMode={props.onCancelInfoMode} />
           </Grid>
         </Grid>
-        <MovieInfo movieId={props.selectedMovieId} />
+        <MovieInfo
+          movieId={props.selectedMovieId}
+          onGetMovieById={props.onGetMovieById}
+        />
       </>
     );
   } else
@@ -35,5 +38,6 @@ Header.propTypes = {
   onAddMovie: PropTypes.func.isRequired,
   isMovieInfoMode: PropTypes.bool.isRequired,
   onCancelInfoMode: PropTypes.func.isRequired,
-  selectedMovieId: PropTypes.number
+  selectedMovieId: PropTypes.number,
+  onGetMovieById: PropTypes.func.isRequired
 };

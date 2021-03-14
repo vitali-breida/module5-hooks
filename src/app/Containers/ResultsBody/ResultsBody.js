@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 export default function ResultsBody(props) {
   return (
-    <GridList cellHeight={250} cols={3}>
+    <GridList cellHeight="auto" cols={3}>
       {props.movies.map((movie) => (
         <GridListTile key={movie.title}>
           <MovieCard

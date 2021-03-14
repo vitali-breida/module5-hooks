@@ -12,6 +12,10 @@ export default function MovieCard(props) {
         imageUrl={props.imageUrl}
         onEditMovie={props.onEditMovie}
         onDeleteMovie={props.onDeleteMovie}
+        isMovieInfoMode={props.isMovieInfoMode}
+        onSetMovieInfoMode={props.onSetMovieInfoMode}
+        selectedMovieId={props.selectedMovieId}
+        onSetSelectedMovieId={props.onSetSelectedMovieId}
       />
       <MovieTitle title={props.title} />
       <MovieGenre genre={props.genre} />
@@ -27,7 +31,11 @@ MovieCard.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   releaseDate: PropTypes.string.isRequired,
   onEditMovie: PropTypes.func.isRequired,
-  onDeleteMovie: PropTypes.func.isRequired
+  onDeleteMovie: PropTypes.func.isRequired,
+  isMovieInfoMode: PropTypes.bool.isRequired,
+  onSetMovieInfoMode: PropTypes.func.isRequired,
+  selectedMovieId: PropTypes.number,
+  onSetSelectedMovieId: PropTypes.func.isRequired
 };
 
 MovieCard.defaultProps = {

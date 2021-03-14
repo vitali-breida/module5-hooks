@@ -7,7 +7,15 @@ export default function MovieImage(props) {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (e) => {
-    setAnchorEl(e.currentTarget);
+    if (!props.isMovieInfoMode) {
+      props.onSetMovieInfoMode(e, props.movieId);
+    } else {
+      if (props.movieId !== props.selectedMovieId) {
+        props.onSetSelectedMovieId(props.movieId);
+      } else {
+        setAnchorEl(e.currentTarget);
+      }
+    }
   };
 
   const handleClose = (e) => {
@@ -50,5 +58,9 @@ MovieImage.propTypes = {
   movieId: PropTypes.number.isRequired,
   imageUrl: PropTypes.string.isRequired,
   onEditMovie: PropTypes.func.isRequired,
-  onDeleteMovie: PropTypes.func.isRequired
+  onDeleteMovie: PropTypes.func.isRequired,
+  isMovieInfoMode: PropTypes.bool.isRequired,
+  onSetMovieInfoMode: PropTypes.func.isRequired,
+  selectedMovieId: PropTypes.number,
+  onSetSelectedMovieId: PropTypes.func.isRequired
 };

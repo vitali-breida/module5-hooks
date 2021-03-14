@@ -27,6 +27,10 @@ export default function Body(props) {
           movies={props.movies}
           onEditMovie={props.onEditMovie}
           onDeleteMovie={props.onDeleteMovie}
+          isMovieInfoMode={props.isMovieInfoMode}
+          onSetMovieInfoMode={props.onSetMovieInfoMode}
+          selectedMovieId={props.selectedMovieId}
+          onSetSelectedMovieId={props.onSetSelectedMovieId}
         />
       </ErrorBoundary>
     </>
@@ -38,5 +42,9 @@ Body.propTypes = {
   sortBy: PropTypes.oneOf(["releaseDate", "title"]),
   onChangeSortBy: PropTypes.func.isRequired,
   onEditMovie: PropTypes.func.isRequired,
-  onDeleteMovie: PropTypes.func.isRequired
+  onDeleteMovie: PropTypes.func.isRequired,
+  isMovieInfoMode: PropTypes.bool.isRequired,
+  onSetMovieInfoMode: PropTypes.func.isRequired,
+  selectedMovieId: PropTypes.number,
+  onSetSelectedMovieId: PropTypes.func.isRequired
 };

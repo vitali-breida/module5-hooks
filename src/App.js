@@ -78,6 +78,8 @@ export default function App() {
   const [editedMovieId, setEditedMoviedId] = useState(null);
   const [movies, setMovies] = useState(predefinedMovies);
   const [sortBy, setSortBy] = useState("releaseDate");
+  const [isMovieInfoMode, setMovieInfoMode] = useState(false);
+  const [selectedMovieId, setSelectedMovieId] = useState(null);
 
   const showAddMovieDialog = (e) => {
     setAddMovieDialogVisible(true);
@@ -105,6 +107,11 @@ export default function App() {
   const closeDeleteMovieDialog = (e) => {
     setEditedMoviedId(null);
     setDeleteMovieDialogVisible(false);
+  };
+
+  const showMovieDetails = (e, id) => {
+    setMovieInfoMode(true);
+    setSelectedMovieId(id);
   };
 
   // add mocked element to array
@@ -159,15 +166,29 @@ export default function App() {
     setMovies(newMovies);
   };
 
+  const cancelInfoMode = () => {
+    setMovieInfoMode(false);
+    setSelectedMovieId(null);
+  };
+
   return (
     <>
-      <Header onAddMovie={showAddMovieDialog} />
+      <Header
+        onAddMovie={showAddMovieDialog}
+        isMovieInfoMode={isMovieInfoMode}
+        onCancelInfoMode={cancelInfoMode}
+        selectedMovieId={selectedMovieId}
+      />
       <Body
         movies={movies}
         sortBy={sortBy}
         onChangeSortBy={handleSortBy}
         onEditMovie={showEditMovieDialog}
         onDeleteMovie={showDeleteMovieDialog}
+        isMovieInfoMode={isMovieInfoMode}
+        onSetMovieInfoMode={showMovieDetails}
+        selectedMovieId={selectedMovieId}
+        onSetSelectedMovieId={setSelectedMovieId}
       />
       <Footer />
 

@@ -1,2 +1,4 @@
-let Footer = () => <div>netflixroulette</div>;
-export default Footer;
+import Logo from "../../Components/Logo/Logo";
+export default function Footer() {
+  return <Logo align="center" />;
+}

@@ -21,6 +21,7 @@ export default function Header(props) {
         <MovieInfo
           movieId={props.selectedMovieId}
           onGetMovieById={props.onGetMovieById}
+          onCalcRecommended={props.onCalcRecommended}
         />
       </>
     );
@@ -39,5 +40,6 @@ Header.propTypes = {
   isMovieInfoMode: PropTypes.bool.isRequired,
   onCancelInfoMode: PropTypes.func.isRequired,
   selectedMovieId: PropTypes.number,
-  onGetMovieById: PropTypes.func.isRequired
+  onGetMovieById: PropTypes.func.isRequired,
+  onCalcRecommended: PropTypes.func.isRequired
 };

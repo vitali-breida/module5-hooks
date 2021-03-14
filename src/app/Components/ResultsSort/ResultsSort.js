@@ -17,7 +17,9 @@ export default function ResultsSort(props) {
 
   const handleSort = (e) => {
     let sortBy = e.currentTarget.dataset["value"];
-    props.onChangeSortBy(e, sortBy);
+    if (sortBy !== props.sortBy) {
+      props.onChangeSortBy(e, sortBy);
+    }
     handleClose(e);
   };
 

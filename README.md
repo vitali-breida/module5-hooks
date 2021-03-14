@@ -1,12 +1,11 @@
-# module3-components
+# module5-hooks
 
-- Forked from the module3
+- Forked from the https://github.com/vitali-breida/module4-components
 - Material UI is used
-- Added 3 modal dialogs (AddMovie, EditMovie, DeleteMovie)
-- Submission from add/edit doesn't take into account form values
-- Mocked movie is inserted while addition
-- Title is updated after submit of Edit dialog
-- 2 Lifecycle methods (componentDidMount, componentWillUnmount) were added for testing purposes in MovieImage
-- Statefull components (App, ResultsSort, MovieImage) were implemented
-- All handlers are implemented to work with Syntetic React events
-- Can be checked directly https://ue0dy.csb.app/
+- Movie Details page was implemented
+- All class components were replaced by functional components
+- All statefull components were reimplemented to use useState hook
+- useEffect hook was added as a part of custom hook useDocumentTitle(see MovieInfo.js)
+- useCallback hook was added for implementation of "calcRecomended" method in App.js
+  (Method puts in console log recommended film if user clicks at the image on Movie Details)
+- Can be checked directly https://fc1sz.csb.app/

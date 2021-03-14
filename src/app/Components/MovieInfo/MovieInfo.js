@@ -1,17 +1,11 @@
 import { Grid } from "@material-ui/core";
 import PropTypes from "prop-types";
-import { useEffect } from "react";
+import useDocumentTitle from "../../Hooks/useDocumentTitle/useDocumentTitle";
 
 export default function MovieInfo(props) {
   const movie = props.onGetMovieById(props.movieId);
 
-  useEffect(() => {
-    document.title = movie.title;
-
-    return () => {
-      document.title = "React app";
-    };
-  });
+  useDocumentTitle(movie.title);
 
   return (
     <Grid container>
